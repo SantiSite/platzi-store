@@ -1,0 +1,15 @@
+mat-card {
+  margin: 20px auto;
+  width: 70%;
+  text-align: center;
+}
+
+mat-card-header {
+  justify-content: center;
+}
+
+@media (max-width: 570px) {
+  .mat-card {
+    width: 90%;
+  }
+}

@@ -1,0 +1,74 @@
+.sign-in {
+  margin: auto;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: -120vw;
+  bottom: 0;
+  width: 50%;
+  display: flex;
+  transition: .5s;
+}
+
+.container-background {
+  position: fixed;
+  z-index: 2;
+  background: #000000ef;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -120vw;
+  bottom: 0;
+  transition: .5s;
+}
+
+.sign-in.is-active {
+  left: 25%;
+}
+
+.container-background.active {
+  left: 0;
+}
+
+.mat-card {
+  margin: auto;
+}
+
+mat-card-header {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.mat-card-header-text {
+  margin: auto;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button {
+  outline: none;
+}
+
+.close {
+ color: red;
+ position: absolute;
+}
+
+.close:hover {
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .sign-in {
+    width: 70%;
+  }
+
+  .sign-in.is-active {
+    left: 15%;
+  }
+
+}

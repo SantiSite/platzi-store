@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{product.title | uppercase}}</mat-card-title>
+    <mat-card-subtitle>{{product.price | currency: 'COL '}}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="crop-image">
+    <img [src]="product.image" alt="Imagen de producto">
+  </div>
+  <mat-card-content>
+    <p>{{product.description | slice:0:20}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button  [routerLink]="['/products', product.id]">Ver detalle</a>
+    <button (click)="addCart()" mat-raised-button color="primary">Añadir al carrito</button>
+  </mat-card-actions>
+</mat-card>
+<!-- <h2>{{product.title | uppercase}}</h2>
+<img [src]="product.image" alt="Imagen de producto">
+<p>{{product.description | slice:0:20}}</p>
+<p>{{today | date:'medium'}}</p>
+<p>{{today | date:'HH:mm:ss'}}</p>
+<strong>{{product.price | currency: 'COL '}}</strong>
+<button (click)="addCart()" mat-raised-button color="primary">Añadir al carrito</button>
+<a [routerLink]="['/products', product.id]">Ver detalle</a> -->

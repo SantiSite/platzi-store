@@ -1,0 +1,49 @@
+.image {
+  width: 100%;
+}
+
+.around-xs {
+  align-items: center;
+}
+
+mat-form-field {
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+p, h2 {
+  margin: auto;
+}
+
+button {
+  outline: none;
+  margin-right: 20px;
+}
+
+@media (max-width: 700px) {
+  .around-xs {
+    display: block;
+    margin: auto;
+    width: 80%;
+  }
+
+  .col-xs-3 {
+    max-width: 85%;
+    margin: auto;
+  }
+
+  .col-xs-2 {
+    max-width: 78%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .box.container_buttons {
+    text-align: center;
+  }
+
+  .box.container_buttons__delete {
+    margin: 0;
+  }
+}

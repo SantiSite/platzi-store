@@ -1,0 +1,75 @@
+<mat-vertical-stepper [linear]="isLinear">
+  <mat-step>
+    <ng-template matStepLabel>Tus productos</ng-template>
+    <div *ngIf="(products$ | async | groupby: 'id') as products">
+      <p *ngIf="products.length === 0">No tienes productos agregados</p>
+        <div class="row around-xs" *ngFor="let product of products">
+          <div class="col-xs-3">
+            <div class="box">
+              <img class="image" [src]="product.image" alt="Imagen del producto">
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <div class="box">
+              <h2><strong>{{product.title}}</strong></h2>
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <div class="box">
+              <p>{{product.price | currency: 'COL '}} Unidad</p>
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <div class="box">
+              Cantidad: {{product.count}}
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <div class="box container_buttons">
+              <button mat-mini-fab color="primary" (click)="addProduct(product)"><mat-icon>add</mat-icon></button>
+              <button class="box container_buttons__delete" mat-mini-fab color="warn" (click)="deleteProduct(product.id)"><mat-icon>delete</mat-icon></button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div>
+      <button mat-raised-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="form">
+    <form [formGroup]="form">
+      <ng-template matStepLabel>Información personal</ng-template>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input placeholder="Name" autocomplete="name" formControlName="name" matInput required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input placeholder="Last Name" autocomplete="family-name" formControlName="lastname" matInput required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input placeholder="Address" autocomplete="street-address" formControlName="address" matInput required>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Selección de pago</ng-template>
+    <mat-form-field appearance="fill">
+      <mat-label>Choose an option</mat-label>
+      <mat-select>
+        <mat-option value="tarjetaCredito">Tarjeta de crédito</mat-option>
+        <mat-option value="tarjetaDebito">Tarjeta de débito</mat-option>
+        <mat-option value="efecty">Pago con Efecty</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button matStepperPrevious>Back</button>
+      <button mat-raised-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>

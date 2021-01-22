@@ -1,0 +1,24 @@
+.mat-table {
+  width: 96%;
+  margin: 2%;
+}
+
+button {
+  outline: none;
+}
+
+tr.mat-row {
+  height: 75px;
+}
+
+.td_price {
+  padding: 0 10px;
+}
+
+td > a {
+  margin-right: 10px;
+}
+
+td.mat-cell:last-of-type {
+  padding-right: 0;
+}

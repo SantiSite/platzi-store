@@ -1,0 +1,59 @@
+.mat-toolbar {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.mat-toolbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: normal;
+  height: 100%;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.contenedor {
+  display: flex;
+  text-align: center;
+  margin: initial;
+}
+
+.container--social {
+  margin: 0;
+  padding: 0 10px;
+}
+
+.angular {
+  margin: 0;
+}
+
+.container-inf {
+  height: 100%;
+}
+
+.mat-form-field {
+  margin-right: 10px;
+}
+
+.learn-angular {
+  color: white;
+
+}
+
+@media (max-width: 581px) {
+  .mat-toolbar-row {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 430px) {
+  .mat-toolbar-row {
+    flex-direction: column;
+  }
+
+  div, .contenedor {
+    margin-top: 15px;
+  }
+}
+
+

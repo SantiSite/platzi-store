@@ -1,0 +1,54 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+      <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+      <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+      <a mat-button routerLink="/demo" routerLinkActive="active">Demo</a>
+    </mat-nav-list>
+    <button class="close_button" mat-mini-fab color="warn" (click)="drawer.toggle()"><mat-icon>close</mat-icon></button>
+  </mat-sidenav>
+  <mat-sidenav-container>
+    <mat-toolbar color="primary">
+      <div class="container_header" *ngIf="isHandset$ | async">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div>
+          <app-sign-up></app-sign-up>
+          <button mat-button class="sign-up-id" (click)="hideShowContainerUp(); hideShowUp()">Sign up</button>
+          <app-sign-in></app-sign-in>
+          <button mat-button class="sign-in-id-header" (click)="hideShowContainer(); hideShow()">Sign in</button>
+          <!-- async se suscribe cuando es necesario a los parametros que tenga total$ y se desuscribe cuando no se este usando -->
+          <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="accent" matBadgePosition="before"><mat-icon>shopping_cart</mat-icon> Cart</a>
+        </div>
+      </div>
+      <mat-toolbar-row *ngIf="(isHandset$ | async) === false">
+        <mat-nav-list>
+          <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+          <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+          <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+          <a mat-button routerLink="/demo" routerLinkActive="active">Demo</a>
+        </mat-nav-list>
+        <div>
+          <app-sign-up></app-sign-up>
+          <button mat-button class="sign-up-id" (click)="hideShowContainerUp(); hideShowUp()">Sign up</button>
+          <app-sign-in></app-sign-in>
+          <button mat-button class="sign-in-id-header" (click)="hideShowContainer(); hideShow()">Sign in</button>
+          <!-- async se suscribe cuando es necesario a los parametros que tenga total$ y se desuscribe cuando no se este usando -->
+          <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="accent" matBadgePosition="before"><mat-icon>shopping_cart</mat-icon> Cart</a>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </mat-sidenav-container>
+</mat-sidenav-container>
+
+
+

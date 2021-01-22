@@ -1,0 +1,71 @@
+<div class="container-background-up"></div>
+<form [formGroup]="form" class="sign-up" (ngSubmit)="saveSignUp($event)">
+  <mat-card>
+    <button class="close-id-up close" type="reset" (click)="hideShowContainer(); hideShow()"><mat-icon>cancel</mat-icon></button>
+    <mat-card-header>
+      <mat-card-title>Sign up</mat-card-title>
+      <mat-card-subtitle>Platzi store</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input matInput formControlName="username" type="text" placeholder="UserName">
+          </mat-form-field>
+          <mat-error *ngIf="form.get('username').hasError('required') && form.get('username').dirty">
+            Este campo es requerido.
+          </mat-error>
+          <mat-error *ngIf="form.get('username').hasError('minlength') && form.get('username').dirty">
+            Este campo debe tener como minimo 4 caracteres.
+          </mat-error>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input matInput formControlName="email" type="email" placeholder="Email" autocomplete="email">
+          </mat-form-field>
+          <mat-error *ngIf="form.get('email').hasError('required') && form.get('email').dirty">
+            Este campo es requerido.
+          </mat-error>
+          <mat-error *ngIf="form.get('email').hasError('email') && form.get('email').dirty">
+            Este campo debe ser un Email.
+          </mat-error>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input  matInput formControlName="password" type="password" placeholder="Password">
+          </mat-form-field>
+          <mat-error *ngIf="form.get('password').hasError('minlength') && form.get('password').dirty">
+            La contraseña debe tener minimo 8 caracteres.
+          </mat-error>
+          <mat-error *ngIf="form.get('password').hasError('required') && form.get('password').dirty">
+            Este campo es requerido.
+          </mat-error>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input matInput formControlName="confirm_password" type="password" placeholder="Confirm Password">
+          </mat-form-field>
+          <mat-error *ngIf="form.get('confirm_password').hasError('required') && form.get('confirm_password').dirty">
+            Este campo es requerido.
+          </mat-error>
+          <mat-error *ngIf="form.get('password').value != form.get('confirm_password').value && form.get('confirm_password') != null && form.get('confirm_password').dirty">
+            La contraseña debe coincidir.
+          </mat-error>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row">
+        <div class="col">
+          <button [disabled]="form.invalid" (click)="hideShowContainer(); hideShow()" mat-raised-button color="warn" style="width: 100%" type="submit">Sign in</button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</form>

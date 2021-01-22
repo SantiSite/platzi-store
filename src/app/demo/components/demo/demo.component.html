@@ -1,0 +1,39 @@
+<h2>{{'Este es el proyecto de Angular' | uppercase}}</h2>
+
+<input type="text" [(ngModel)]="title">
+{{title}}<p>
+{{5*5/2}}<p>
+  {{'Hola mundo'}}</p>
+<span>Exponente</span>
+<input type="number" [(ngModel)]="power">
+{{ power | exponential}}
+
+<div *ngIf="title === 'Santiago'">
+  Este es Santiago
+</div>
+
+<div *ngIf="title === 'Alejandro'">
+  Este es Alejandro
+</div>
+<div *ngIf="title === 'Juan'">
+  Este es Juan
+</div>
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'Santiago'">Este es Santiago</p>
+  <p *ngSwitchCase="'Alejandro'">Este es Alejandro</p>
+  <p *ngSwitchCase="'Juan'">Este es Juan</p>
+  <p *ngSwitchDefault>No hay Match</p>
+</div>
+
+
+<button (click)="addItem()">Agregar Item</button>
+
+<h4 *ngIf="items.length === 0">
+  La lista esta vacia
+</h4>
+
+<li *ngFor="let nombres of items; index as i">
+  {{nombres}} {{i}}
+  <button (click)="deleteItem(i)">Eliminar</button>
+</li>

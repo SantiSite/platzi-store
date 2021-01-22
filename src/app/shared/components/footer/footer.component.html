@@ -1,0 +1,35 @@
+<mat-toolbar color = "primary">
+  <mat-toolbar-row>
+    <div>
+      <figure class="angular">
+        <img src="./../../../../assets/images/svg/angular.svg" alt="Imagen de angular">
+      </figure>
+      <a href="https://angular.io/" class="learn-angular">Learn Angular</a>
+    </div>
+    <div class="contenedor">
+      <figure class="container--social">
+        <a href="#"><img src="./../../../../assets/images/svg/facebook.svg" alt="Imagen de facebook"></a>
+      </figure>
+      <figure class="container--social">
+        <a href="#"><img src="./../../../../assets/images/svg/twitter.svg" alt="Imagen de twitter"></a>
+      </figure>
+      <figure class="container--social">
+        <a href="#"><img src="./../../../../assets/images/svg/github.svg" alt="Imagen de github"></a>
+      </figure>
+      <figure class="container--social">
+        <a href="#"><img src="./../../../../assets/images/svg/instagram.svg" alt="Imagen de instagram"></a>
+      </figure>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Contact</mat-label>
+        <input matInput [formControl]="emailField" type="email" placeholder="email@example.com" autocomplete="email">
+      </mat-form-field>
+      <!--{{emailField.valid}}-->
+      <button mat-flat-button color="accent" [disabled]="emailField.invalid" (click)="sendEmail()">Send</button>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+      <p class="container-inf">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem id, reprehenderit dolorum obcaecati delectus pariatur minima laboriosam quod quidem nulla maxime provident tempore quia optio voluptas asperiores cum repudiandae veritatis!</p>
+  </mat-toolbar-row>
+</mat-toolbar>

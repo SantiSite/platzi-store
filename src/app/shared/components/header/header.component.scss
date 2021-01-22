@@ -1,0 +1,45 @@
+nav > a {
+  padding: 5px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #dc3545;
+}
+
+mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  outline: none;
+}
+// nav > a.active {
+//   background-color: azure;;
+// }
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 250px;
+  padding: 30px;
+}
+
+.sidenav a , .sidenav button {
+  display: flex;
+}
+
+.container_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.close_button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
